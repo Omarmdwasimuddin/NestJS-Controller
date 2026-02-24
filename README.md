@@ -47,7 +47,7 @@ export class CatsController {
 ##### output path- localhost:3000/cats/breed
 ![output](/public/img/breed.png)
 
-### Controller: Request Object
+### Controller 01: Request Object
 
 Handlers অনেক সময় ক্লায়েন্টের request-এর বিস্তারিত তথ্য অ্যাক্সেস করার প্রয়োজন হয়। Nest ডিফল্টভাবে আন্ডারলাইনিং প্ল্যাটফর্ম (Express) থেকে request object-এ অ্যাক্সেস প্রদান করে।
 
@@ -71,7 +71,7 @@ export class CatsController {
 ```
 ---
 
-### Controller: Resources
+### Controller 02: Resources
 
 আগে আমরা cats resource fetch করার জন্য একটি endpoint (GET route) তৈরি করেছি।
 এখন সাধারণত আমরা চাইব এমন একটি endpoint ও থাকবে যা নতুন record তৈরি করবে।
@@ -117,7 +117,7 @@ export class CatsController {
 এর পাশাপাশি, `@All()` ব্যবহার করলে এমন একটি endpoint তৈরি হয় যা সব ধরনের HTTP request handle করতে পারে।
 
 
-### Controller: Route wildcards
+### Controller 03: Route wildcards
 
 NestJS-এ pattern-based route-ও সমর্থিত। উদাহরণস্বরূপ, একটি route-এর শেষে যেকোনো ধরনের অক্ষরের সমন্বয় মিলানোর জন্য asterisk (*)-কে wildcard হিসেবে ব্যবহার করা যায়।
 
@@ -167,7 +167,7 @@ GET /abcd/hello-world
 GET /abcd/anything-here
 ```
 
-### Controller: Status code
+### Controller 04: Status code
 
 যেমন বলা হয়েছে, response-এর default status code সবসময় 200 হয়, শুধুমাত্র POST request-এর জন্য default হয় 201।
 তুমি চাইলে handler-এর level-এ @HttpCode(...) decorator ব্যবহার করে এই আচরণ সহজেই পরিবর্তন করতে পারো।
@@ -192,7 +192,7 @@ export class CatsController {
 
 ![](/public/img/statuscode.png)
 
-### Controller: Response headers
+### Controller 05: Response headers
 
 কোনো custom response header সেট করতে, তুমি দুইভাবে করতে পারো:
 
@@ -219,7 +219,7 @@ export class CatsController {
 
 ![](/public/img/responseheader.png)
 
-### Controller: Redirection
+### Controller 06: Redirection
 
 Response কে কোনো নির্দিষ্ট URL-এ redirect করতে, তুমি দুইভাবে করতে পারো:
 
@@ -288,7 +288,7 @@ HTTP GET request থেকে version নামের query parameter নিত�
 
 উদাহরণ: /cats/docs?version=5 → version এর মান হবে '5'
 
-### Controller: Route parameters
+### Controller 07: Route parameters
 
 
 
@@ -337,7 +337,7 @@ export class CatsController {
 
 ![](/public/img/param.png)
 
-### Controller: Sub-domain routing
+### Controller 08: Sub-domain routing
 
 ```bash
 # create controller
@@ -379,7 +379,7 @@ export class AccountController {
 ```
 ---
 
-### Controller: State sharing
+### Controller 09: State sharing
 
 অন্যান্য প্রোগ্রামিং ভাষা থেকে আসা ডেভেলপারদের জন্য এটা কিছুটা অবাক করার মতো হতে পারে যে Nest-এ প্রায় সবকিছুই ইনকামিং রিকোয়েস্টগুলোর মধ্যে শেয়ার করা হয়। এর মধ্যে রয়েছে ডাটাবেস কানেকশন পুল, গ্লোবাল স্টেটসহ সিঙ্গেলটন সার্ভিস ইত্যাদি।
 
@@ -387,7 +387,7 @@ export class AccountController {
 
 তবে কিছু নির্দিষ্ট ক্ষেত্রে রিকোয়েস্ট-ভিত্তিক লাইফটাইমসহ কন্ট্রোলার প্রয়োজন হতে পারে। যেমন: GraphQL অ্যাপ্লিকেশনে প্রতি-রিকোয়েস্ট ক্যাশিং, রিকোয়েস্ট ট্র্যাকিং, অথবা মাল্টি-টেন্যান্সি বাস্তবায়ন। ইনজেকশন স্কোপ কীভাবে নিয়ন্ত্রণ করতে হয় সে সম্পর্কে আরও জানা যেতে পারে সংশ্লিষ্ট ডকুমেন্টেশনে।
 
-### Controller: Asynchronicity
+### Controller 10: Asynchronicity
 
 আমরা আধুনিক JavaScript পছন্দ করি, বিশেষ করে এর অ্যাসিনক্রোনাস ডাটা হ্যান্ডলিংয়ের উপর জোর দেওয়াকে। এজন্যই Nest সম্পূর্ণভাবে async ফাংশন সমর্থন করে।
 
@@ -435,7 +435,7 @@ export class CatsController {
 উভয় পদ্ধতিই বৈধ, এবং আপনার প্রয়োজন অনুযায়ী যেটি সবচেয়ে উপযুক্ত মনে হয় সেটি আপনি বেছে নিতে পারেন।
 
 
-### Controller: Request payloads
+### Controller 11: Request payloads
 
 আমাদের আগের উদাহরণে, POST রুট হ্যান্ডলার কোনো ক্লায়েন্ট প্যারামিটার গ্রহণ করছিল না। এখন আমরা সেটি ঠিক করবো @Body() ডেকোরেটর যোগ করে।
 
@@ -469,6 +469,7 @@ export class CatsController {
     @Post()
     async create(@Body() createCatDto: CreateCatDto) {
         return 'This action adds a new cat';
+        //return createCatDto;
     }
 
 }
@@ -476,3 +477,83 @@ export class CatsController {
 ---
 
 ##### Hints: আমাদের ValidationPipe এমন প্রপার্টি ফিল্টার করতে পারে যেগুলো মেথড হ্যান্ডলার দ্বারা গ্রহণযোগ্য নয়। এই ক্ষেত্রে, আমরা গ্রহণযোগ্য প্রপার্টিগুলোকে হোয়াইটলিস্ট করতে পারি, এবং হোয়াইটলিস্টে না থাকা কোনো প্রপার্টি স্বয়ংক্রিয়ভাবে রিজাল্টিং অবজেক্ট থেকে সরিয়ে দেওয়া হয়। CreateCatDto উদাহরণে, আমাদের হোয়াইটলিস্ট হলো `name`, `age`, এবং `breed` প্রপার্টিগুলো। আরও জানতে এখানে [দেখুন](https://docs.nestjs.com/techniques/validation#stripping-properties)।
+
+![](/public/img/requestPayload.png)
+
+
+### Controller 12: Query parameters
+
+আপনার রুটে কুয়েরি প্যারামিটার হ্যান্ডেল করার সময়, আপনি @Query() ডেকোরেটর ব্যবহার করে এগুলো ইনকামিং রিকোয়েস্ট থেকে বের করতে পারেন। আসুন দেখুন এটি বাস্তবে কীভাবে কাজ করে।
+
+ধরি, আমাদের একটি রুট আছে যেখানে আমরা কুয়েরি প্যারামিটার যেমন `age` এবং `breed` ব্যবহার করে ক্যাটের তালিকা ফিল্টার করতে চাই। প্রথমে CatsController-এ কুয়েরি প্যারামিটারগুলো ডিফাইন করি:
+
+```bash
+# cats.controller.ts
+import { Controller, Get, Query} from '@nestjs/common';
+
+
+@Controller('cats')
+export class CatsController {
+
+    @Get()
+    async findAll(@Query('age') age: number, @Query('breed') breed: string) {
+        return `This action returns all cats filtered by age: ${age} and breed: ${breed}`;
+    }
+
+}
+```
+---
+
+![](/public/img/query.png)
+
+এই উদাহরণে, @Query() ডেকোরেটর ব্যবহার করে কুয়েরি স্ট্রিং থেকে `age` এবং `breed` এর মানগুলো বের করা হয়েছে। উদাহরণস্বরূপ, একটি রিকোয়েস্ট যা এইভাবে এসেছে:
+
+GET /cats?age=2&breed=Persian
+
+এর ফলে `age` হবে 2 এবং `breed` হবে Persian।
+
+
+Nested query for array-
+```bash
+# cats.controller.ts
+import { Controller, Get, Query} from '@nestjs/common';
+
+
+@Controller('cats')
+export class CatsController {
+
+    @Get()
+    async findAll(
+        @Query('age') age: number, 
+        @Query('breed') breed: string[] 
+    ) {
+        return `Cats filtered by age: ${age} and breed: ${breed}`;
+    }
+
+}
+```
+---
+
+![](/public/img/query2.png)
+
+
+Nested query for object-
+```bash
+# cats.controller.ts
+import { Controller, Get, Query} from '@nestjs/common';
+
+
+@Controller('cats')
+export class CatsController {
+
+    @Get()
+    async findAll(@Query('filter') filter: string) {
+        const parsed = JSON.parse(filter);
+        return `Filtered cats: age=${parsed.age}, breed=${parsed.breed}, live=${parsed.live}`;
+    }
+
+}
+```
+---
+
+![](/public/img/query3.png)
