@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-### controller
+### Controller
 
 ```bash
 # create controller
@@ -25,7 +25,7 @@ export class CatsController {
 }
 ```
 ---
-[path]localhost:3000/cats
+##### path- localhost:3000/cats
 ![output](/public/img/cats.png)
 
 ```bash
@@ -44,5 +44,5 @@ export class CatsController {
 ```
 ---
 
-[path](localhost:3000/cats/breed)
+##### path- localhost:3000/cats/breed
 ![output](/public/img/breed.png)
