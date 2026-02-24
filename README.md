@@ -94,6 +94,8 @@ export class CatsController {
 ```
 ---
 
+![](/public/img/wildcard.png)
+
 ```ts
 @Get('abcd/*')
 ```
@@ -118,8 +120,6 @@ GET /abcd/test
 GET /abcd/hello-world
 GET /abcd/anything-here
 ```
-
-![](/public/img/wildcard.png)
 
 ### Controller: Status code
 
