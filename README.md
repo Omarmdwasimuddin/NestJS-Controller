@@ -25,7 +25,7 @@ export class CatsController {
 }
 ```
 ---
-[path](localhost:3000/cats)
+[path]localhost:3000/cats
 ![output](/public/img/cats.png)
 
 ```bash
